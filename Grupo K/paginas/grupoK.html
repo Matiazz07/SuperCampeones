@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundial 2026 - Grupo K</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Bangers&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="grupoK.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="titulo-neon">COPA MUNDIAL 2026</h1>
+        <nav class="barra-navegacion">
+            <ul id="menuNavegacion">
+                <li><button class="nav-item activo" data-target="sec-tabla"
+                        onclick="cambiarPantalla(this)">Posiciones</button></li>
+                <li><button class="nav-item" data-target="sec-equipos" onclick="cambiarPantalla(this)">Equipos del
+                        Grupo</button></li>
+            </ul>
+            <div id="indicadorNeon" class="indicador-neon"></div>
+        </nav>
+    </header>
+
+    <main class="contenedor-principal">
+        <section id="sec-tabla" class="seccion-pantalla activa">
+            <div class="tarjeta-cristal">
+                <h2 class="subtitulo-dorado">GRUPO K</h2>
+                <div class="tabla-responsive">
+                    <table class="tabla-futbol">
+                        <thead>
+                            <tr>
+                                <th>Pos</th>
+                                <th>Selección</th>
+                                <th>PJ</th>
+                                <th>G</th>
+                                <th>E</th>
+                                <th>P</th>
+                                <th>Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTabla">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="sec-equipos" class="seccion-pantalla">
+            <div class="cuadricula-equipos" id="contenedorEquipos">
+            </div>
+        </section>
+    </main>
+
+    <script src="grupoK.js"></script>
+</body>
+
+</html>
