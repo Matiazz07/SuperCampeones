@@ -1,14 +1,29 @@
+/* Variables de Diseño: Versión Fiesta Mundialista (Más Colorida) */
 :root {
-    --fondo-estadio: #020617;
-    --verde-cancha: #22c55e;
-    --verde-brillo: #4ade80;
-    --oro-copa: #fbbf24;
-    --cristal-fondo: rgba(30, 41, 59, 0.7);
-    --cristal-borde: rgba(74, 222, 128, 0.3);
-    --texto-blanco: #f8fafc;
-    --texto-gris: #cbd5e1;
+    --color-mundial-vino: #8a1538;
+    /* Se mantiene para detalles elegantes */
+    --color-mundial-dorado: #ffb703;
+    /* Un dorado más brillante y encendido */
+    --color-azul-fiesta: #1d4ed8;
+    /* Azul vivo y enérgico para el encabezado */
+    --color-rojo-vivo: #ef4444;
+    /* Rojo vibrante para detalles dinámicos */
+    --color-texto-oscuro: #0f172a;
+    /* Azul oscuro para excelente lectura */
+    --color-fondo-pagina: #f0f4f8;
+    /* Un gris azulado muy limpio que hace resaltar los colores */
+    --color-blanco: #ffffff;
+
+    --fuente-titulos: 'Poppins', sans-serif;
+    --fuente-cuerpo: 'Inter', sans-serif;
+
+    --shadow-tarjeta: 0 10px 25px rgba(29, 78, 216, 0.08);
+    /* Sombra con un toque azul */
+    --border-radius-cromo: 16px;
+    /* Bordes un poco más modernos y redondeados */
 }
 
+/* Estilos Generales */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,223 +31,145 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--fondo-estadio);
-    background-image: radial-gradient(circle at 50% 0%, #064e3b 0%, var(--fondo-estadio) 60%);
-    color: var(--texto-blanco);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
+    background-color: var(--color-fondo-pagina);
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-texto-oscuro);
+    line-height: 1.6;
+    padding-bottom: 50px;
 }
 
-header {
-    width: 100%;
-    max-width: 900px;
+/* Encabezado Principal Colorido y Deportivo */
+.header-grupo {
+    /* Un degradado moderno entre el azul deportivo, el vino y el rojo vivo */
+    background: linear-gradient(135deg, var(--color-azul-fiesta) 0%, var(--color-mundial-vino) 50%, var(--color-rojo-vivo) 100%);
+    color: var(--color-blanco);
     text-align: center;
+    padding: 50px 20px;
     margin-bottom: 40px;
-}
-
-.titulo-neon {
-    font-family: 'Bangers', cursive;
-    font-size: 4rem;
-    color: var(--verde-cancha);
-    text-shadow: 0 0 10px rgba(34, 197, 94, 0.5), 0 0 20px rgba(34, 197, 94, 0.3);
-    letter-spacing: 4px;
-    margin-bottom: 30px;
-}
-
-.barra-navegacion {
     position: relative;
-    background: var(--cristal-fondo);
-    border: 1px solid var(--cristal-borde);
-    border-radius: 50px;
-    padding: 10px;
-    display: inline-flex;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    border-bottom: 5px solid var(--color-mundial-dorado);
+    /* Línea dorada brillante abajo */
 }
 
-.barra-navegacion ul {
-    display: flex;
-    list-style: none;
-    position: relative;
-    z-index: 2;
-}
-
-.nav-item {
-    background: transparent;
-    border: none;
-    color: var(--texto-gris);
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 12px 30px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.nav-item.activo {
-    color: var(--fondo-estadio);
-}
-
-.indicador-neon {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    height: calc(100% - 20px);
-    background: linear-gradient(90deg, var(--verde-cancha), var(--verde-brillo));
-    border-radius: 40px;
-    box-shadow: 0 0 15px var(--verde-cancha);
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    z-index: 1;
-}
-
-.contenedor-principal {
-    width: 100%;
-    max-width: 900px;
-    position: relative;
-}
-
-.seccion-pantalla {
-    display: none;
-    animation: aparecerAbajo 0.5s ease forwards;
-}
-
-.seccion-pantalla.activa {
-    display: block;
-}
-
-@keyframes aparecerAbajo {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.tarjeta-cristal {
-    background: var(--cristal-fondo);
-    backdrop-filter: blur(16px);
-    border: 1px solid var(--cristal-borde);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-.subtitulo-dorado {
-    font-family: 'Bangers', cursive;
-    color: var(--oro-copa);
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 25px;
-    letter-spacing: 2px;
-}
-
-.tabla-responsive {
-    width: 100%;
-    overflow-x: auto;
-}
-
-.tabla-futbol {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 8px;
-}
-
-.tabla-futbol th {
-    color: var(--verde-brillo);
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    padding-bottom: 10px;
-}
-
-.tabla-futbol td {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 15px;
-    text-align: center;
-    font-weight: 600;
-}
-
-.tabla-futbol td:nth-child(2) {
-    text-align: left;
-    font-size: 1.2rem;
-    color: var(--texto-blanco);
-}
-
-.tabla-futbol td:first-child {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    color: var(--oro-copa);
-}
-
-.tabla-futbol td:last-child {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    color: var(--verde-cancha);
-    font-size: 1.2rem;
-}
-
-.tabla-futbol tr:hover td {
-    background: rgba(34, 197, 94, 0.1);
-    transform: scale(1.02);
-    transition: all 0.2s;
-    cursor: default;
-}
-
-.cuadricula-equipos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-.tarjeta-equipo {
-    background: var(--cristal-fondo);
-    border: 1px solid var(--cristal-borde);
-    border-radius: 20px;
-    padding: 30px 20px;
-    text-align: center;
-    backdrop-filter: blur(12px);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.tarjeta-equipo:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(34, 197, 94, 0.2);
-    border-color: var(--verde-cancha);
-}
-
-.nombre-pais {
-    font-family: 'Bangers', cursive;
-    font-size: 2.2rem;
-    color: var(--texto-blanco);
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-}
-
-.confederacion {
-    display: inline-block;
-    background: rgba(251, 191, 36, 0.2);
-    color: var(--oro-copa);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.85rem;
+.header-grupo h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 3rem;
     font-weight: 800;
-    margin-bottom: 15px;
-}
-
-.datos-equipo p {
-    color: var(--texto-gris);
-    font-size: 0.95rem;
+    letter-spacing: 3px;
     margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* Sombra al texto para que resalte */
 }
 
-.datos-equipo strong {
-    color: var(--verde-brillo);
+.header-grupo .subtitulo {
+    font-size: 1.1rem;
+    color: var(--color-mundial-dorado);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Contenedor de la Maquetación (Corregido para laptops) */
+.contenedor-principal {
+    max-width: 1240px;
+    /* Un poquito más ancho para dar holgura */
+    margin: 0 auto;
+    padding: 0 40px;
+    /* Más espacio blanco de seguridad a los lados */
+}
+
+/* Grid de Cromos (Corregido con más espacio) */
+.seccion-cromos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    /* Incrementamos la separación horizontal y vertical */
+}
+
+/* Tarjeta Estilo Cromo */
+.cromo-pais {
+    background-color: var(--color-blanco);
+    border: 2px solid var(--color-mundial-dorado);
+    /* Marco dorado de cromo */
+    border-radius: var(--border-radius-cromo);
+    overflow: hidden;
+    box-shadow: var(--shadow-tarjeta);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por encima */
+.cromo-pais:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(138, 21, 56, 0.15);
+}
+
+/* Contenedor de la Bandera */
+.cromo-imagen {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    background-color: #eaeaea;
+}
+
+.cromo-imagen .bandera {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Evita que las banderas se deformen */
+}
+
+/* Etiqueta de la Confederación */
+.badge-confederacion {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--color-mundial-vino);
+    color: var(--color-blanco);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--color-mundial-dorado);
+}
+
+/* Cuerpo de la Tarjeta */
+.cromo-contenido {
+    padding: 24px 20px;
+    /* Más espacio arriba y abajo del título */
+    text-align: center;
+}
+
+.info-estatica p {
+    margin-bottom: 12px;
+    /* Más separación entre la línea de DT y la de Capitán */
+    color: var(--color-texto-oscuro);
+}
+
+.cromo-contenido h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.3rem;
+    color: var(--color-mundial-vino);
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--color-fondo-pagina);
+    padding-bottom: 8px;
+}
+
+/* Información Estática */
+.info-estatica {
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.info-estatica p {
+    margin-bottom: 8px;
+    color: var(--color-texto-oscuro);
+}
+
+.info-estatica strong {
+    color: var(--color-texto-mutado);
+    font-weight: 500;
 }

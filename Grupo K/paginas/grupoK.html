@@ -5,56 +5,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundial 2026 - Grupo K</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Bangers&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="grupoK.css">
 </head>
 
 <body>
-    <header>
-        <h1 class="titulo-neon">COPA MUNDIAL 2026</h1>
-        <nav class="barra-navegacion">
-            <ul id="menuNavegacion">
-                <li><button class="nav-item activo" data-target="sec-tabla"
-                        onclick="cambiarPantalla(this)">Posiciones</button></li>
-                <li><button class="nav-item" data-target="sec-equipos" onclick="cambiarPantalla(this)">Equipos del
-                        Grupo</button></li>
-            </ul>
-            <div id="indicadorNeon" class="indicador-neon"></div>
-        </nav>
+
+    <header class="header-grupo">
+        <h1>GRUPO K</h1>
+        <p class="subtitulo">Álbum de Cromos - Mundial FIFA 2026</p>
     </header>
 
     <main class="contenedor-principal">
-        <section id="sec-tabla" class="seccion-pantalla activa">
-            <div class="tarjeta-cristal">
-                <h2 class="subtitulo-dorado">GRUPO K</h2>
-                <div class="tabla-responsive">
-                    <table class="tabla-futbol">
-                        <thead>
-                            <tr>
-                                <th>Pos</th>
-                                <th>Selección</th>
-                                <th>PJ</th>
-                                <th>G</th>
-                                <th>E</th>
-                                <th>P</th>
-                                <th>Pts</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cuerpoTabla">
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+        <section class="seccion-cromos">
 
-        <section id="sec-equipos" class="seccion-pantalla">
-            <div class="cuadricula-equipos" id="contenedorEquipos">
-            </div>
+            <!-- CROMO 1: PORTUGAL -->
+            <article class="cromo-pais">
+                <div class="cromo-imagen">
+                    <img src="../img/portugal.jpg" alt="Bandera de Portugal" class="bandera">
+                    <span class="badge-confederacion">UEFA</span>
+                </div>
+                <div class="cromo-contenido">
+                    <h3>PORTUGAL</h3>
+                    <div class="info-estatica">
+                        <p><strong>Director Técnico:</strong> Roberto Martínez</p>
+                        <p><strong>Capitán:</strong> Cristiano Ronaldo</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CROMO 2: RD CONGO -->
+            <article class="cromo-pais">
+                <div class="cromo-imagen">
+                    <img src="../img/congo.jpg" alt="Bandera de la República Democrática del Congo" class="bandera">
+                    <span class="badge-confederacion">CAF</span>
+                </div>
+                <div class="cromo-contenido">
+                    <h3>RD CONGO</h3>
+                    <div class="info-estatica">
+                        <p><strong>Director Técnico:</strong> Sébastien Desabre</p>
+                        <p><strong>Capitán:</strong> Chancel Mbemba</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CROMO 3: UZBEKISTÁN -->
+            <article class="cromo-pais">
+                <div class="cromo-imagen">
+                    <img src="../img/uzbekistan.jpg" alt="Bandera de Uzbekistán" class="bandera">
+                    <span class="badge-confederacion">AFC</span>
+                </div>
+                <div class="cromo-contenido">
+                    <h3>UZBEKISTÁN</h3>
+                    <div class="info-estatica">
+                        <p><strong>Director Técnico:</strong> Srečko Katanec</p>
+                        <p><strong>Capitán:</strong> Eldor Shomurodov</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CROMO 4: COLOMBIA -->
+            <article class="cromo-pais">
+                <div class="cromo-imagen">
+                    <img src="../img/colombia.jpg" alt="Bandera de Colombia" class="bandera">
+                    <span class="badge-confederacion">CONMEBOL</span>
+                </div>
+                <div class="cromo-contenido">
+                    <h3>COLOMBIA</h3>
+                    <div class="info-estatica">
+                        <p><strong>Director Técnico:</strong> Néstor Lorenzo</p>
+                        <p><strong>Capitán:</strong> James Rodríguez</p>
+                    </div>
+                </div>
+            </article>
+
         </section>
     </main>
 
-    <script src="grupoK.js"></script>
 </body>
 
 </html>
