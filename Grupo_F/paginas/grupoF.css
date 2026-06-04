@@ -1,18 +1,28 @@
 /* Variables de Diseño: Versión Fiesta Mundialista (Más Colorida) */
 :root {
-    --color-mundial-vino: #8a1538;     /* Se mantiene para detalles elegantes */
-    --color-mundial-dorado: #ffb703;   /* Un dorado más brillante y encendido */
-    --color-azul-fiesta: #1d4ed8;      /* Azul vivo y enérgico para el encabezado */
-    --color-rojo-vivo: #ef4444;        /* Rojo vibrante para detalles dinámicos */
-    --color-texto-oscuro: #0f172a;     /* Azul oscuro para excelente lectura */
-    --color-fondo-pagina: #f0f4f8;     /* Un gris azulado muy limpio que hace resaltar los colores */
+    --color-mundial-vino: #8a1538;
+    /* Se mantiene para detalles elegantes */
+    --color-mundial-dorado: #ffb703;
+    /* Un dorado más brillante y encendido */
+    --color-azul-fiesta: #1d4ed8;
+    /* Azul vivo y enérgico para el encabezado */
+    --color-rojo-vivo: #ef4444;
+    /* Rojo vibrante para detalles dinámicos */
+    --color-texto-oscuro: #0f172a;
+    /* un azul muy oscuro para texto principal */
+    --color-texto-mutado: #64748b;
+    /* Azul oscuro para excelente lectura */
+    --color-fondo-pagina: #f0f4f8;
+    /* Un gris azulado muy limpio que hace resaltar los colores */
     --color-blanco: #ffffff;
-    
+
     --fuente-titulos: 'Poppins', sans-serif;
     --fuente-cuerpo: 'Inter', sans-serif;
-    
-    --shadow-tarjeta: 0 10px 25px rgba(29, 78, 216, 0.08); /* Sombra con un toque azul */
-    --border-radius-cromo: 16px;       /* Bordes un poco más modernos y redondeados */
+
+    --shadow-tarjeta: 0 10px 25px rgba(29, 78, 216, 0.08);
+    /* Sombra con un toque azul */
+    --border-radius-cromo: 16px;
+    /* Bordes un poco más modernos y redondeados */
 }
 
 /* Estilos Generales */
@@ -41,7 +51,8 @@ body {
     position: relative;
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    border-bottom: 5px solid var(--color-mundial-dorado); /* Línea dorada brillante abajo */
+    border-bottom: 5px solid var(--color-mundial-dorado);
+    /* Línea dorada brillante abajo */
 }
 
 .header-grupo h1 {
@@ -50,7 +61,8 @@ body {
     font-weight: 800;
     letter-spacing: 3px;
     margin-bottom: 8px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra al texto para que resalte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* Sombra al texto para que resalte */
 }
 
 .header-grupo .subtitulo {
@@ -64,22 +76,26 @@ body {
 
 /* Contenedor de la Maquetación (Corregido para laptops) */
 .contenedor-principal {
-    max-width: 1240px; /* Un poquito más ancho para dar holgura */
+    max-width: 1240px;
+    /* Un poquito más ancho para dar holgura */
     margin: 0 auto;
-    padding: 0 40px; /* Más espacio blanco de seguridad a los lados */
+    padding: 0 40px;
+    /* Más espacio blanco de seguridad a los lados */
 }
 
 /* Grid de Cromos (Corregido con más espacio) */
 .seccion-cromos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px; /* Incrementamos la separación horizontal y vertical */
+    gap: 40px;
+    /* Incrementamos la separación horizontal y vertical */
 }
 
 /* Tarjeta Estilo Cromo */
 .cromo-pais {
     background-color: var(--color-blanco);
-    border: 2px solid var(--color-mundial-dorado); /* Marco dorado de cromo */
+    border: 2px solid var(--color-mundial-dorado);
+    /* Marco dorado de cromo */
     border-radius: var(--border-radius-cromo);
     overflow: hidden;
     box-shadow: var(--shadow-tarjeta);
@@ -88,8 +104,8 @@ body {
 
 /* Efecto al pasar el mouse por encima */
 .cromo-pais:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(138, 21, 56, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(138, 21, 56, 0.20);
 }
 
 /* Contenedor de la Bandera */
@@ -103,7 +119,8 @@ body {
 .cromo-imagen .bandera {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Evita que las banderas se deformen */
+    object-fit: cover;
+    /* Evita que las banderas se deformen */
 }
 
 /* Etiqueta de la Confederación */
@@ -122,12 +139,14 @@ body {
 
 /* Cuerpo de la Tarjeta */
 .cromo-contenido {
-    padding: 24px 20px; /* Más espacio arriba y abajo del título */
+    padding: 24px 20px;
+    /* Más espacio arriba y abajo del título */
     text-align: center;
 }
 
 .info-estatica p {
-    margin-bottom: 12px; /* Más separación entre la línea de DT y la de Capitán */
+    margin-bottom: 12px;
+    /* Más separación entre la línea de DT y la de Capitán */
     color: var(--color-texto-oscuro);
 }
 
@@ -155,4 +174,173 @@ body {
 .info-estatica strong {
     color: var(--color-texto-mutado);
     font-weight: 500;
+}
+
+/* Indicador visual de que la tarjeta es clickeable */
+.cromo-pais {
+    cursor: pointer;
+}
+
+/* =========================================
+   ESTILOS DEL MODAL (VENTANA EMERGENTE)
+   ========================================= */
+
+.modal-overlay {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.7);
+    /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(4px);
+    /* Efecto cristalino */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Clase que activa la visibilidad del modal */
+.modal-overlay.activo {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-contenido {
+    background-color: var(--color-blanco);
+    width: 90%;
+    max-width: 850px;
+    border-radius: var(--border-radius-cromo);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    border: 3px solid var(--color-mundial-dorado);
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+    /* Permite hacer scroll si hay mucho contenido */
+
+
+/* Animación de entrada de la caja */
+.modal-overlay.activo .modal-contenido {
+    transform: scale(1);
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2.2rem;
+    color: var(--color-blanco);
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s;
+    z-index: 10;
+}
+
+.cerrar-modal:hover {
+    color: var(--color-mundial-dorado);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--color-azul-fiesta) 0%, var(--color-mundial-vino) 100%);
+    color: var(--color-blanco);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.modal-header h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 2rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-body h3 {
+    color: var(--color-mundial-vino);
+    border-bottom: 2px solid var(--color-fondo-pagina);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    font-family: var(--fuente-titulos);
+    font-size: 1.2rem;
+}
+
+.modal-body h3:first-child {
+    margin-top: 0;
+}
+
+.modal-body p {
+    color: var(--color-texto-oscuro);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Diseño de la lista de partidos */
+.lista-partidos {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-partidos li {
+    background: var(--color-fondo-pagina);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--color-rojo-vivo);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.lista-partidos li strong {
+    color: var(--color-azul-fiesta);
+    font-size: 1.1rem;
+    font-family: var(--fuente-titulos);
+}
+
+.lista-partidos li span {
+    font-size: 0.95rem;
+    color: #475569;
+}
+/* ==========================
+   RESPONSIVE PARA MÓVILES
+   ========================== */
+
+@media (max-width: 768px) {
+
+    .header-grupo h1 {
+        font-size: 2rem;
+    }
+
+    .header-grupo .subtitulo {
+        font-size: 0.9rem;
+    }
+
+    .contenedor-principal {
+        padding: 0 20px;
+    }
+
+    .seccion-cromos {
+        gap: 25px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+
 }

@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mundial 2026 - Grupo F</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="grupoF.css">
 </head>
 <body>
@@ -17,70 +20,172 @@
     </header>
 
     <main class="contenedor-principal">
+
         <section class="seccion-cromos">
-            
-            <!-- CROMO 1: PAÍSES BAJOS -->
-            <article class="cromo-pais">
+
+            <!-- PAÍSES BAJOS -->
+            <article class="cromo-pais" onclick="abrirModal('paisesbajos')">
+
                 <div class="cromo-imagen">
-                    <img src="img/paisesBajos.jpg" alt="Bandera de Países Bajos" class="bandera">
-                    <span class="badge-confederacion">UEFA</span>
+                    <img src="../img/paisesBajos.jpg" alt="Bandera de Países Bajos" class="bandera">
+
+                    <span class="badge-confederacion">
+                        UEFA
+                    </span>
                 </div>
+
                 <div class="cromo-contenido">
+
                     <h3>PAÍSES BAJOS</h3>
+
                     <div class="info-estatica">
-                        <p><strong>Director Técnico:</strong> Ronald Koeman</p>
-                        <p><strong>Capitán:</strong> Virgil van Dijk</p>
+                        <p>
+                            <strong>Director Técnico:</strong>
+                            Ronald Koeman
+                        </p>
+
+                        <p>
+                            <strong>Capitán:</strong>
+                            Virgil van Dijk
+                        </p>
                     </div>
+
                 </div>
+
             </article>
 
-            <!-- CROMO 2: JAPÓN -->
-            <article class="cromo-pais">
+            <!-- JAPÓN -->
+            <article class="cromo-pais" onclick="abrirModal('japon')">
+
                 <div class="cromo-imagen">
-                    <img src="img/japon.jpg" alt="Bandera de Japón" class="bandera">
-                    <span class="badge-confederacion">AFC</span>
+                    <img src="../img/japon.jpg" alt="Bandera de Japón" class="bandera">
+
+                    <span class="badge-confederacion">
+                        AFC
+                    </span>
                 </div>
+
                 <div class="cromo-contenido">
+
                     <h3>JAPÓN</h3>
+
                     <div class="info-estatica">
-                        <p><strong>Director Técnico:</strong> Hajime Moriyasu</p>
-                        <p><strong>Capitán:</strong> Wataru Endo</p>
+                        <p>
+                            <strong>Director Técnico:</strong>
+                            Hajime Moriyasu
+                        </p>
+
+                        <p>
+                            <strong>Capitán:</strong>
+                            Wataru Endo
+                        </p>
                     </div>
+
                 </div>
+
             </article>
 
-            <!-- CROMO 3: SUECIA -->
-            <article class="cromo-pais">
+            <!-- SUECIA -->
+            <article class="cromo-pais" onclick="abrirModal('suecia')">
+
                 <div class="cromo-imagen">
-                    <img src="img/suecia.jpg" alt="Bandera de Suecia" class="bandera">
-                    <span class="badge-confederacion">UEFA</span>
+                    <img src="../img/suecia.jpg" alt="Bandera de Suecia" class="bandera">
+
+                    <span class="badge-confederacion">
+                        UEFA
+                    </span>
                 </div>
+
                 <div class="cromo-contenido">
+
                     <h3>SUECIA</h3>
+
                     <div class="info-estatica">
-                        <p><strong>Director Técnico:</strong> Jon Dahl Tomasson</p>
-                        <p><strong>Capitán:</strong> Victor Lindelöf</p>
+                        <p>
+                            <strong>Director Técnico:</strong>
+                            Jon Dahl Tomasson
+                        </p>
+
+                        <p>
+                            <strong>Capitán:</strong>
+                            Victor Lindelöf
+                        </p>
                     </div>
+
                 </div>
+
             </article>
 
-            <!-- CROMO 4: TÚNEZ -->
-            <article class="cromo-pais">
+            <!-- TÚNEZ -->
+            <article class="cromo-pais" onclick="abrirModal('tunez')">
+
                 <div class="cromo-imagen">
-                    <img src="img/tunez.jpg" alt="Bandera de Túnez" class="bandera">
-                    <span class="badge-confederacion">CAF</span>
+                    <img src="../img/tunez.jpg" alt="Bandera de Túnez" class="bandera">
+
+                    <span class="badge-confederacion">
+                        CAF
+                    </span>
                 </div>
+
                 <div class="cromo-contenido">
+
                     <h3>TÚNEZ</h3>
+
                     <div class="info-estatica">
-                        <p><strong>Director Técnico:</strong> Kais Yaâkoubi</p>
-                        <p><strong>Capitán:</strong> Ellyes Skhiri</p>
+                        <p>
+                            <strong>Director Técnico:</strong>
+                            Kais Yaâkoubi
+                        </p>
+
+                        <p>
+                            <strong>Capitán:</strong>
+                            Ellyes Skhiri
+                        </p>
                     </div>
+
                 </div>
+
             </article>
 
         </section>
+
     </main>
+
+    <!-- MODAL -->
+    <div id="modal-equipo" class="modal-overlay">
+
+        <div class="modal-contenido">
+
+            <span class="cerrar-modal" onclick="cerrarModal()">
+                &times;
+            </span>
+
+            <div class="modal-header">
+                <h2 id="modal-titulo">
+                    Nombre del País
+                </h2>
+            </div>
+
+            <div class="modal-body">
+
+                <h3>📖 Historia Mundialista</h3>
+
+                <p id="modal-historia">
+                    Cargando información...
+                </p>
+
+                <h3>⚽ Partidos del Grupo F</h3>
+
+                <ul id="modal-partidos" class="lista-partidos">
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="grupoF.js"></script>
 
 </body>
 </html>
