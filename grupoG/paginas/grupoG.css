@@ -33,6 +33,7 @@ body {
 
 /* Encabezado Principal Colorido y Deportivo */
 .header-grupo {
+    /* Un degradado moderno entre el azul deportivo, el vino y el rojo vivo */
     background: linear-gradient(135deg, var(--color-azul-fiesta) 0%, var(--color-mundial-vino) 50%, var(--color-rojo-vivo) 100%);
     color: var(--color-blanco);
     text-align: center;
@@ -41,7 +42,7 @@ body {
     position: relative;
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    border-bottom: 5px solid var(--color-mundial-dorado);
+    border-bottom: 5px solid var(--color-mundial-dorado); /* Línea dorada brillante abajo */
 }
 
 .header-grupo h1 {
@@ -50,7 +51,7 @@ body {
     font-weight: 800;
     letter-spacing: 3px;
     margin-bottom: 8px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra al texto para que resalte */
 }
 
 .header-grupo .subtitulo {
@@ -62,24 +63,24 @@ body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-/* Contenedor de la Maquetación */
+/* Contenedor de la Maquetación (Corregido para laptops) */
 .contenedor-principal {
-    max-width: 1240px;
+    max-width: 1240px; /* Un poquito más ancho para dar holgura */
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 40px; /* Más espacio blanco de seguridad a los lados */
 }
 
-/* Grid de Cromos */
+/* Grid de Cromos (Corregido con más espacio) */
 .seccion-cromos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    gap: 40px; /* Incrementamos la separación horizontal y vertical */
 }
 
 /* Tarjeta Estilo Cromo */
 .cromo-pais {
     background-color: var(--color-blanco);
-    border: 2px solid var(--color-mundial-dorado);
+    border: 2px solid var(--color-mundial-dorado); /* Marco dorado de cromo */
     border-radius: var(--border-radius-cromo);
     overflow: hidden;
     box-shadow: var(--shadow-tarjeta);
@@ -87,11 +88,13 @@ body {
     cursor: pointer;
 }
 
+/* Efecto al pasar el mouse por encima */
 .cromo-pais:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(138, 21, 56, 0.15);
 }
 
+/* Contenedor de la Bandera */
 .cromo-imagen {
     position: relative;
     width: 100%;
@@ -102,9 +105,10 @@ body {
 .cromo-imagen .bandera {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Evita que las banderas se deformen */
 }
 
+/* Etiqueta de la Confederación */
 .badge-confederacion {
     position: absolute;
     bottom: 10px;
@@ -118,8 +122,9 @@ body {
     border: 1px solid var(--color-mundial-dorado);
 }
 
+/* Cuerpo de la Tarjeta */
 .cromo-contenido {
-    padding: 24px 20px;
+    padding: 24px 20px; /* Más espacio arriba y abajo del título */
     text-align: center;
 }
 
@@ -133,13 +138,14 @@ body {
     padding-bottom: 8px;
 }
 
+/* Información Estática */
 .info-estatica {
     text-align: left;
     font-size: 0.9rem;
 }
 
 .info-estatica p {
-    margin-bottom: 12px;
+    margin-bottom: 12px; /* Más separación entre la línea de DT y la de Capitán */
     color: var(--color-texto-oscuro);
 }
 
@@ -148,10 +154,11 @@ body {
     font-weight: 500;
 }
 
-/* =========================================
-   ESTILOS DEL MODAL COMPACTADOS (SIN ESPACIOS VACÍOS)
-   ========================================= */
+/* =======================================================
+   ESTILOS EXCLUSIVOS Y SEGUROS PARA EL INTERIOR DEL MODAL
+   ======================================================= */
 
+/* 1. Fondo oscuro detrás del modal */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -159,48 +166,51 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(15, 23, 42, 0.7);
+    background-color: rgba(15, 23, 42, 0.75);
     backdrop-filter: blur(4px);
     z-index: 1000;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
 .modal-overlay.activo {
     display: flex;
-    opacity: 1;
 }
 
+/* 2. Caja del modal (Ancha ocupando casi toda la pantalla horizontal) */
 .modal-contenido {
     background-color: var(--color-blanco);
-    width: 92%;
-    max-width: 1150px;
+    width: 95%;
+    max-width: 95%; 
     border-radius: var(--border-radius-cromo);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     border: 3px solid var(--color-mundial-dorado);
     position: relative;
-    transform: scale(0.8);
-    transition: transform 0.3s ease;
-    overflow: hidden;
-    max-height: 85vh; /* Se redujo levemente la altura máxima para contener mejor el layout */
+    max-height: 90vh; /* Aprovecha más la pantalla vertical */
     overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
-.modal-overlay.activo .modal-contenido {
-    transform: scale(1);
+.modal-header {
+    background: linear-gradient(135deg, var(--color-azul-fiesta) 0%, var(--color-mundial-vino) 100%);
+    color: var(--color-blanco);
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-header h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.6rem;
+    letter-spacing: 2px;
 }
 
 .cerrar-modal {
     position: absolute;
-    top: 10px; /* Más compacto */
+    top: 12px;
     right: 20px;
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: var(--color-blanco);
     cursor: pointer;
     font-weight: bold;
-    transition: color 0.2s;
     z-index: 10;
 }
 
@@ -208,81 +218,71 @@ body {
     color: var(--color-mundial-dorado);
 }
 
-.modal-header {
-    background: linear-gradient(135deg, var(--color-azul-fiesta) 0%, var(--color-mundial-vino) 100%);
-    color: var(--color-blanco);
-    padding: 18px 20px; /* Reducido de 25px para ganar espacio */
-    text-align: center;
-}
-
-.modal-header h2 {
-    font-family: var(--fuente-titulos);
-    font-size: 1.8rem; /* Ligeramente más estilizado */
-    margin: 0;
-    letter-spacing: 2px;
-}
-
 .modal-body {
-    padding: 20px 30px; /* Reducido el padding vertical superior e inferior */
+    padding: 30px;
 }
 
-/* Layout de dos columnas internas */
-.grid-modal-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: start; /* Alinea los elementos al inicio para evitar estiramientos artificiales */
+/* 3. Desactiva la cuadrícula de dos columnas ÚNICAMENTE dentro de los modales */
+[id^="modal-"] .grid-modal-layout {
+    display: block !important; 
 }
 
-/* Estilos de subtítulos dentro del Modal */
+[id^="modal-"] .columna-narrativa, 
+[id^="modal-"] .columna-tecnica {
+    display: contents !important; 
+}
+
+/* 4. Espaciado e interlineado idéntico y fluido de arriba para abajo */
 .modal-body h3 {
     color: var(--color-mundial-vino);
     border-bottom: 2px solid var(--color-fondo-pagina);
-    padding-bottom: 4px;
-    margin-bottom: 8px; /* Menor separación con los párrafos */
-    margin-top: 15px;    /* Menor separación entre secciones */
+    padding-bottom: 6px;
+    margin-top: 30px;    /* Distancia simétrica antes de cada sección */
+    margin-bottom: 12px; /* Distancia controlada antes de los textos */
     font-family: var(--fuente-titulos);
-    font-size: 1.15rem;
+    font-size: 1.25rem;
 }
 
-.modal-body h3:first-child {
+/* Evita que el primer título se aleje del borde superior */
+.modal-body h3:first-of-type {
     margin-top: 0;
 }
 
+/* Detalles estéticos de los textos y tablas internos */
 .modal-body p {
-    color: var(--color-texto-oscuro);
-    font-size: 0.95rem;
-    line-height: 1.5; /* Más compacto y fluido */
+    font-size: 1rem;
+    line-height: 1.6;
     text-align: justify;
+    color: var(--color-texto-oscuro);
+    margin-bottom: 15px;
 }
 
-/* Lista de Curiosidades */
 .lista-curiosidades {
     padding-left: 20px;
-    color: var(--color-texto-oscuro);
-    font-size: 0.95rem;
+    font-size: 1rem;
+    margin-bottom: 15px;
 }
 
 .lista-curiosidades li {
-    margin-bottom: 6px; /* Ajuste sutil */
+    margin-bottom: 8px;
 }
 
-/* Tabla de Estadísticas */
 .tabla-estadisticas {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.95rem;
-    margin-bottom: 10px; /* Reducido */
+    font-size: 1rem;
+    margin-bottom: 25px;
 }
 
 .tabla-estadisticas td {
-    padding: 8px 10px; /* Celdas más compactas */
+    padding: 12px 10px;
     border-bottom: 1px solid var(--color-fondo-pagina);
 }
 
 .tabla-estadisticas td:first-child {
     font-weight: 600;
     color: var(--color-texto-mutado);
+    text-align: left;
 }
 
 .tabla-estadisticas td:last-child {
@@ -291,7 +291,6 @@ body {
     color: var(--color-azul-fiesta);
 }
 
-/* Lista de partidos compactada */
 .lista-partidos {
     list-style: none;
     padding: 0;
@@ -299,30 +298,21 @@ body {
 
 .lista-partidos li {
     background: var(--color-fondo-pagina);
-    margin-bottom: 8px; /* Separación de tarjetas reducida de 10px a 8px */
-    padding: 10px 12px;  /* Relleno interno vertical reducido para evitar el aire excesivo */
+    margin-bottom: 10px;
+    padding: 15px;
     border-radius: 8px;
     border-left: 5px solid var(--color-rojo-vivo);
     display: flex;
     flex-direction: column;
-    gap: 2px; /* Espacio mínimo entre líneas de texto */
+    gap: 4px;
 }
 
 .lista-partidos li strong {
     color: var(--color-azul-fiesta);
-    font-size: 0.95rem;
-    font-family: var(--fuente-titulos);
+    font-size: 1rem;
 }
 
 .lista-partidos li span {
-    font-size: 0.85rem;
-    color: #475569;
-}
-
-/* Adaptación para pantallas móviles */
-@media (max-width: 768px) {
-    .grid-modal-layout {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
+    font-size: 0.9rem;
+    color: var(--color-texto-mutado);
 }
