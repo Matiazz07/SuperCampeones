@@ -23,7 +23,6 @@
     <main class="contenedor-principal">
         <section class="seccion-cromos">
 
-            <!-- CROMO 1: PORTUGAL -->
             <article class="cromo-pais" onclick="abrirModal('portugal')">
                 <div class="cromo-imagen">
                     <img src="../img/portugal.jpg" alt="Bandera de Portugal" class="bandera">
@@ -40,7 +39,7 @@
 
             <article class="cromo-pais" onclick="abrirModal('congo')">
                 <div class="cromo-imagen">
-                    <img src="../img/congo.jpg" alt="Bandera de la República Democrática del Congo" class="bandera">
+                    <img src="../img/congo.jpg" alt="Bandera de RD Congo" class="bandera">
                     <span class="badge-confederacion">CAF</span>
                 </div>
                 <div class="cromo-contenido">
@@ -86,21 +85,28 @@
     <div id="modal-equipo" class="modal-overlay">
         <div class="modal-contenido">
             <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
-
             <div class="modal-header">
-                <h2 id="modal-titulo">Nombre del País</h2>
+                <h2 id="modal-titulo"></h2>
             </div>
+            <div class="modal-body grid-modal-layout">
+                <div class="columna-narrativa">
+                    <h3>📖 Historia mundialista</h3>
+                    <p id="modal-historia"></p>
 
-            <div class="modal-body">
-                <h3>📖 Historia Mundialista</h3>
-                <p id="modal-historia">Cargando historia...</p>
+                    <h3>💡 Curiosidades</h3>
+                    <ul id="modal-curiosidades" class="lista-curiosidades"></ul>
+                </div>
+                <div class="columna-tecnica">
+                    <h3>📊 Estadísticas principales</h3>
+                    <div id="modal-estadisticas" class="stats-grid"></div>
 
-                <h3>⚽ Partidos - Grupo K (Sedes 2026)</h3>
-                <ul id="modal-partidos" class="lista-partidos">
-                </ul>
+                    <h3>⚽ Partidos (Sedes 2026)</h3>
+                    <ul id="modal-partidos" class="lista-partidos"></ul>
+                </div>
             </div>
         </div>
     </div>
+
     <script src="grupoK.js"></script>
 </body>
 
