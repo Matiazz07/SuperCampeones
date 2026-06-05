@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundial 2026 - Grupo A</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="grupoA.css"> </head>
+<body>
+
+    <header class="header-grupo">
+        <h1>GRUPO A</h1>
+        <p class="subtitulo">Álbum de Cromos - Mundial FIFA 2026</p>
+    </header>
+
+    <main class="contenedor-principal">
+        <section class="seccion-cromos">
+            
+            <article class="cromo-pais" onclick="abrirModal('mexico')">
+                <div class="cromo-imagen">
+                    <img src="../img/mexico.jpg" alt="Bandera de México" class="bandera">
+                    <span class="badge-confederacion">CONCACAF</span>
+                </div>
+                <div class="cromo-contenido">
+                    <h3>MÉXICO</h3>
+                    <div class="info-estatica">
+                        <p><strong>Director Técnico:</strong> Javier Aguirre</p>
+                        <p><strong>Capitán:</strong> Edson Álvarez</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cromo-pais" onclick="abrirModal('sudáfrica')">
+                <div class="cromo-imagen">
+                    <img src="../img/sudafrica.jpg" alt="Bandera de Sudáfrica" class="bandera">
+                    <span class="badge-confederacion">CAF</span>
+                </div>
+                <div class="cromo-contenido">
+                    <h3>SUDÁFRICA</h3>
+                    <div class="info-estatica">
+                        <p><strong>Director Técnico:</strong> Hugo Bross</p>
+                        <p><strong>Capitán:</strong> Ronwen Williams</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cromo-pais" onclick="abrirModal('corea_del_sur')">
+                <div class="cromo-imagen">
+                    <img src="../img/corea_del_sur.jpg" alt="Bandera de corea del sur" class="bandera">
+                    <span class="badge-confederacion">AFC</span>
+                </div>
+                <div class="cromo-contenido">
+                    <h3>COREA DEL SUR</h3>
+                    <div class="info-estatica">
+                        <p><strong>Director Técnico:</strong> Hong Myung-bo</p>
+                        <p><strong>Capitán:</strong> Son Heung-min</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cromo-pais" onclick="abrirModal('r_Checa')">
+                <div class="cromo-imagen">
+                    <img src="../img/r_Checa.jpg" alt="Bandera de r_Checa" class="bandera">
+                    <span class="badge-confederacion">UEFA</span>
+                </div>
+                <div class="cromo-contenido">
+                    <h3>REPÚBLICA CHECA</h3>
+                    <div class="info-estatica">
+                        <p><strong>Director Técnico:</strong> Miroslav Koubek</p>
+                        <p><strong>Capitán:</strong> Ladislav Krejčí</p>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <div id="modal-equipo" class="modal-overlay">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+            <div class="modal-header">
+                <h2 id="modal-titulo">Nombre del País</h2>
+            </div>
+            <div class="modal-body">
+                <h3>📖 Historia Mundialista</h3>
+                <p id="modal-historia">Cargando historia...</p>
+                <h3>💡 Curiosidades</h3>
+                <p id="modal-curiosidades">...</p>
+                <h3>📊 Estadísticas principales</h3>
+                <p id="modal-estadísticasPrincipales">...</p>
+                <h3>⚽ Partidos (Sedes 2026)</h3>
+                <ul id="modal-partidos" class="lista-partidos"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="grupoA.js"></script>
+</body>
+</html>

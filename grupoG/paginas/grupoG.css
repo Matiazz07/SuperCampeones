@@ -7,6 +7,7 @@
     --color-texto-oscuro: #0f172a;     /* Azul oscuro para excelente lectura */
     --color-fondo-pagina: #f0f4f8;     /* Un gris azulado muy limpio que hace resaltar los colores */
     --color-blanco: #ffffff;
+    --color-texto-mutado: #475569;
     
     --fuente-titulos: 'Poppins', sans-serif;
     --fuente-cuerpo: 'Inter', sans-serif;
@@ -84,6 +85,7 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow-tarjeta);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 /* Efecto al pasar el mouse por encima */
@@ -126,11 +128,6 @@ body {
     text-align: center;
 }
 
-.info-estatica p {
-    margin-bottom: 12px; /* Más separación entre la línea de DT y la de Capitán */
-    color: var(--color-texto-oscuro);
-}
-
 .cromo-contenido h3 {
     font-family: var(--fuente-titulos);
     font-size: 1.3rem;
@@ -148,11 +145,174 @@ body {
 }
 
 .info-estatica p {
-    margin-bottom: 8px;
+    margin-bottom: 12px; /* Más separación entre la línea de DT y la de Capitán */
     color: var(--color-texto-oscuro);
 }
 
 .info-estatica strong {
     color: var(--color-texto-mutado);
     font-weight: 500;
+}
+
+/* =======================================================
+   ESTILOS EXCLUSIVOS Y SEGUROS PARA EL INTERIOR DEL MODAL
+   ======================================================= */
+
+/* 1. Fondo oscuro detrás del modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.activo {
+    display: flex;
+}
+
+/* 2. Caja del modal (Ancha ocupando casi toda la pantalla horizontal) */
+.modal-contenido {
+    background-color: var(--color-blanco);
+    width: 95%;
+    max-width: 95%; 
+    border-radius: var(--border-radius-cromo);
+    border: 3px solid var(--color-mundial-dorado);
+    position: relative;
+    max-height: 90vh; /* Aprovecha más la pantalla vertical */
+    overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--color-azul-fiesta) 0%, var(--color-mundial-vino) 100%);
+    color: var(--color-blanco);
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-header h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--color-blanco);
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.cerrar-modal:hover {
+    color: var(--color-mundial-dorado);
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+/* 3. Desactiva la cuadrícula de dos columnas ÚNICAMENTE dentro de los modales */
+[id^="modal-"] .grid-modal-layout {
+    display: block !important; 
+}
+
+[id^="modal-"] .columna-narrativa, 
+[id^="modal-"] .columna-tecnica {
+    display: contents !important; 
+}
+
+/* 4. Espaciado e interlineado idéntico y fluido de arriba para abajo */
+.modal-body h3 {
+    color: var(--color-mundial-vino);
+    border-bottom: 2px solid var(--color-fondo-pagina);
+    padding-bottom: 6px;
+    margin-top: 30px;    /* Distancia simétrica antes de cada sección */
+    margin-bottom: 12px; /* Distancia controlada antes de los textos */
+    font-family: var(--fuente-titulos);
+    font-size: 1.25rem;
+}
+
+/* Evita que el primer título se aleje del borde superior */
+.modal-body h3:first-of-type {
+    margin-top: 0;
+}
+
+/* Detalles estéticos de los textos y tablas internos */
+.modal-body p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    color: var(--color-texto-oscuro);
+    margin-bottom: 15px;
+}
+
+.lista-curiosidades {
+    padding-left: 20px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.lista-curiosidades li {
+    margin-bottom: 8px;
+}
+
+.tabla-estadisticas {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.tabla-estadisticas td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--color-fondo-pagina);
+}
+
+.tabla-estadisticas td:first-child {
+    font-weight: 600;
+    color: var(--color-texto-mutado);
+    text-align: left;
+}
+
+.tabla-estadisticas td:last-child {
+    text-align: right;
+    font-weight: bold;
+    color: var(--color-azul-fiesta);
+}
+
+.lista-partidos {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-partidos li {
+    background: var(--color-fondo-pagina);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--color-rojo-vivo);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.lista-partidos li strong {
+    color: var(--color-azul-fiesta);
+    font-size: 1rem;
+}
+
+.lista-partidos li span {
+    font-size: 0.9rem;
+    color: var(--color-texto-mutado);
 }
