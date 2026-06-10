@@ -10,17 +10,18 @@ const datosEquipos = {
             "1958 — Suecia",
             "1962 — Chile",
             "1966 — Inglaterra",
-            "1970 — México 🏠 (Anfitrión)",
+            "1970 — México (Anfitrión)",
             "1978 — Argentina",
-            "1986 — México 🏠 (Anfitrión)",
+            "1986 — México (Anfitrión)",
             "1994 — Estados Unidos",
             "1998 — Francia",
-            "2002 — Corea del Sur y Japón",
+            "2002 — Corea del Sur / Japón",
             "2006 — Alemania",
             "2010 — Sudáfrica",
             "2014 — Brasil",
             "2018 — Rusia",
-            "2022 — Qatar"
+            "2022 — Qatar",
+            '2026 — Estados Unidos / México / Canadá'
         ],
         estadísticasPrincipales: `<table class="tabla-estadisticas">
             <tr><td>Mejor resultado</td><td>Cuartos de final</td></tr>
@@ -35,9 +36,17 @@ const datosEquipos = {
     sudáfrica: {
         nombre: "SUDÁFRICA",
         historia: 'La selección de Sudáfrica, apodada los "Bafana Bafana", tiene una historia reciente marcada por el Apartheid. Estuvieron vetados por la FIFA por más de 30 años. Tras su readmisión, ganaron la Copa Africana de Naciones en 1996 y organizaron el Mundial de 2010, siendo la única nación anfitriona eliminada en primera fase.',
-        curiosidades: '..',
-        participaciones: [],
-        estadísticasPrincipales: '..',
+        curiosidades: 'Su historia está profundamente ligada a la superación del apartheid y a la unificación de su sociedad multicultural.',
+        participaciones: [
+            '1998 — Francia',
+            '2002 — Corea del Sur / Japón',
+            '2010 — Sudáfrica (Anfitrión)',
+            '2026 — Estados Unidos / México / Canadá'
+        ],
+        estadísticasPrincipales: `<table class="tabla-estadisticas">
+            <tr><td>Mejor resultado</td><td>Fase de grupos</td></tr>
+            <tr><td>Ranking FIFA (junio 2026)</td><td>55.º</td></tr>
+        </table>`,
         partidos: [
             { rival: "vs México", fecha: "Jueves 11 de Junio, 2026", estadio: "Mexico City Stadium", hora: "14:00 UTC-5" },
             { rival: "vs R. Checa", fecha: "Jueves 18 de Junio, 2026", estadio: "Atlanta Stadium", hora: "11:00 UTC-5" },
@@ -47,9 +56,25 @@ const datosEquipos = {
     corea_del_sur: {
         nombre: "COREA DEL SUR",
         historia: 'La selección de Corea del Sur (conocida como los "Guerreros Taegeuk") pasó de encajar goleadas históricas a ser una potencia asiática con 11 clasificaciones consecutivas a la Copa del Mundo. Su momento cumbre ocurrió cuando coorganizó el torneo en 2002, eliminando a potencias y alcanzando el cuarto lugar.',
-        curiosidades: '..',
-        participaciones: [],
-        estadísticasPrincipales: '..',
+        curiosidades: 'Es la más exitosa de Asia, destacando por su histórico 4.º lugar en el Mundial 2002 además se caracterizan por una disciplina táctica y una velocidad letal.',
+        participaciones: [
+            '1954 — Suiza',
+            '1986 — México',
+            '1990 — Italia',
+            '1994 — Estados Unidos',
+            '1998 — Francia',
+            '2002 — Corea del Sur / Japón',
+            '2006 — Alemania',
+            '2010 — Sudáfrica',
+            '2014 — Brasil',
+            '2018 — Rusia',
+            '2022 — Qatar',
+            '2026 — Estados Unidos / México / Canadá'
+        ],
+        estadísticasPrincipales: `<table class="tabla-estadisticas">
+            <tr><td>Mejor resultado</td><td>Cuarto lugar</td></tr>
+            <tr><td>Ranking FIFA (junio 2026)</td><td>25.º</td></tr>
+        </table>`,
         partidos: [
             { rival: "vs R. Checa", fecha: "Jueves 11 de Junio, 2026", estadio: "Estadio Guadalajara", hora: "21:00 UTC-5" },
             { rival: "vs México", fecha: "Jueves 18 de Junio, 2026", estadio: "Estadio Guadalajara", hora: "20:00 UTC-5" },
@@ -59,9 +84,24 @@ const datosEquipos = {
     r_Checa: {
         nombre: "CHEQUIA",
         historia: 'La selección de Chequia (oficialmente República Checa) es una de las grandes potencias europeas. Heredera histórica de la antigua Checoslovaquia, conserva un legado de enorme calidad y una escuela basada en la disciplina táctica, la inteligencia y la técnica, que la ha convertido en un rival siempre temido a nivel internacional',
-        curiosidades: '',
-        participaciones: [],
-        estadísticasPrincipales: '',
+        curiosidades: 'Heredera de la gran escuela checoslovaca, su historia está marcada por dos subcampeonatos mundiales, la invención del penal más famoso y el regreso a la élite de la mano de Patrik Schick',
+        participaciones: [
+            '1934 — Italia', 
+            '1938 — Francia',
+            '1954 — Suiza ',
+            '1958 — Suecia ',
+            '1962 — Chile ',
+            '1970 — México ',
+            '1982 — España ',
+            '1990 — Italia ',
+            "2006 — Alemania",
+            '2026 — Estados Unidos / México / Canadá'
+
+        ],
+        estadísticasPrincipales: `<table class="tabla-estadisticas">
+            <tr><td>Mejor resultado</td><td>Subcampeonato</td></tr>
+            <tr><td>Ranking FIFA (junio 2026)</td><td>44.º</td></tr>
+        </table>`,
         partidos: [
             { rival: "vs Corea del Sur", fecha: "Jueves 11 de Junio, 2026", estadio: "Estadio Guadalajara", hora: "21:00 UTC-5" },
             { rival: "vs Sudáfrica", fecha: "Jueves 18 de Junio, 2026", estadio: "Atlanta Stadium", hora: "11:00 UTC-5" },
