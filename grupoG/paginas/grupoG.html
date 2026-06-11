@@ -19,8 +19,7 @@
     <main class="contenedor-principal">
         <section class="seccion-cromos">
             
-            <!-- CROMO BÉLGICA -->
-            <article class="cromo-pais" onclick="abrirModal('modal-belgica')">
+            <article class="cromo-pais" onclick="window.location.href='belgica.html'">
                 <div class="cromo-imagen">
                     <img src="../img/belgica.jpg" alt="Bandera de Bélgica" class="bandera">
                     <span class="badge-confederacion">UEFA</span>
@@ -34,8 +33,7 @@
                 </div>
             </article>
 
-            <!-- CROMO EGIPTO -->
-            <article class="cromo-pais" onclick="abrirModal('modal-egipto')">
+            <article class="cromo-pais" onclick="window.location.href='egipto.html'">
                 <div class="cromo-imagen">
                     <img src="../img/egipto.jpg" alt="Bandera de Egipto" class="bandera">
                     <span class="badge-confederacion">CAF</span>
@@ -49,8 +47,7 @@
                 </div>
             </article>
 
-            <!-- CROMO IRÁN -->
-            <article class="cromo-pais" onclick="abrirModal('modal-iran')">
+            <article class="cromo-pais" onclick="window.location.href='iran.html'">
                 <div class="cromo-imagen">
                     <img src="../img/iran.jpg" alt="Bandera de Irán" class="bandera">
                     <span class="badge-confederacion">AFC</span>
@@ -64,8 +61,7 @@
                 </div>
             </article>
 
-            <!-- CROMO NUEVA ZELANDA -->
-            <article class="cromo-pais" onclick="abrirModal('modal-nuevazelanda')">
+            <article class="cromo-pais" onclick="window.location.href='nuevazelanda.html'">
                 <div class="cromo-imagen">
                     <img src="../img/nuevaZelanda.jpg" alt="Bandera de Nueva Zelanda" class="bandera">
                     <span class="badge-confederacion">OFC</span>
@@ -82,158 +78,5 @@
         </section>
     </main>
 
-    <!-- =========================================
-       MODALES INDEPENDIENTES OPTIMIZADOS
-       ========================================= -->
-
-    <!-- MODAL BÉLGICA -->
-    <div id="modal-belgica" class="modal-overlay" onclick="cerrarModalExterno(event, 'modal-belgica')">
-        <div class="modal-contenido">
-            <span class="cerrar-modal" onclick="cerrarModal('modal-belgica')">&times;</span>
-            <div class="modal-header">
-                <h2>SELECCIÓN DE BÉLGICA</h2>
-            </div>
-            <div class="modal-body grid-modal-layout">
-                <div class="columna-narrativa">
-                    <h3>📖 Historia mundialista</h3>
-                    <p>Los 'Diablos Rojos' entran a esta cita con el objetivo de consolidar el recambio generacional tras su época dorada. Su mejor participación histórica fue el tercer lugar obtenido en Rusia 2018. Clasificaron de forma invicta en las eliminatorias de la UEFA demostrando una enorme solidez ofensiva.</p>
-                    
-                    <h3>💡 Curiosidades</h3>
-                    <ul class="lista-curiosidades">
-                        <li>Es uno de los pocos equipos europeos que visten completamente de rojo, su apodo an alusión al color lo adoptaron formalmente en 1906.</li>
-                        <li>Kevin De Bruyne asumió la capitanía absoluta tras el retiro internacional de Eden Hazard.</li>
-                    </ul>
-                </div>
-                <div class="columna-tecnica">
-                    <h3>📊 Estadísticas principales</h3>
-                    <table class="tabla-estadisticas">
-                        <tr><td>Participaciones mundiales anteriores</td><td>14 (1930, 1934, 1938, 1954, 1970, 1982, 1986, 1990, 1994, 1998, 2002, 2014, 2018, 2022)</td></tr>
-                        <tr><td>Mejor resultado</td><td>3er Lugar (2018)</td></tr>
-                        <tr><td>Ranking FIFA (junio 2026)</td><td>9°</td></tr>
-                    </table>
-
-                    <h3>⚽ Partidos (Sedes 2026)</h3>
-                    <ul class="lista-partidos">
-                        <li><strong>Bélgica vs Egipto</strong><span>📅 15 de Junio, 2026</span><span>🏟️ Seattle Stadium (Seattle)</span></li>
-                        <li><strong>Bélgica vs Irán</strong><span>📅 21 de Junio, 2026</span><span>🏟️ Los Angeles Stadium (Los Ángeles)</span></li>
-                        <li><strong>Nueva Zelanda vs Bélgica</strong><span>📅 26 de Junio, 2026</span><span>🏟️ BC Place (Vancouver)</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL EGIPTO -->
-    <div id="modal-egipto" class="modal-overlay" onclick="cerrarModalExterno(event, 'modal-egipto')">
-        <div class="modal-contenido">
-            <span class="cerrar-modal" onclick="cerrarModal('modal-egipto')">&times;</span>
-            <div class="modal-header">
-                <h2>SELECCIÓN DE EGIPTO</h2>
-            </div>
-            <div class="modal-body grid-modal-layout">
-                <div class="columna-narrativa">
-                    <h3>📖 Historia mundialista</h3>
-                    <p>Los 'Faraones' son los gigantes históricos del fútbol africano con un récord de 7 Copas de África en sus vitrinas. Sin embargo, en los mundiales buscan superar su racha histórica, ya que no han logrado pasar de la primera fase en sus apariciones previas.</p>
-                    
-                    <h3>💡 Curiosidades</h3>
-                    <ul class="lista-curiosidades">
-                        <li>Egipto fue la primera selección de todo el continente africano y del mundo árabe en participar en una Copa del Mundo (Italia 1934).</li>
-                        <li>Mohamed Salah ostenta el récord de ser el máximo anotador de Egipto en toda la historia de las clasificaciones mundialistas de la CAF.</li>
-                    </ul>
-                </div>
-                <div class="columna-tecnica">
-                    <h3>📊 Estadísticas principales</h3>
-                    <table class="tabla-estadisticas">
-                        <tr><td>Participaciones mundiales anteriores</td><td>3 (1934, 1990, 2018)</td></tr>
-                        <tr><td>Mejor resultado</td><td>Fase de grupos</td></tr>
-                        <tr><td>Ranking FIFA (junio 2026)</td><td>29°</td></tr>
-                    </table>
-
-                    <h3>⚽ Partidos (Sedes 2026)</h3>
-                    <ul class="lista-partidos">
-                        <li><strong>Bélgica vs Egipto</strong><span>📅 15 de Junio, 2026</span><span>🏟️ Seattle Stadium (Seattle)</span></li>
-                        <li><strong>Nueva Zelanda vs Egipto</strong><span>📅 21 de Junio, 2026</span><span>🏟️ BC Place (Vancouver)</span></li>
-                        <li><strong>Egipto vs Irán</strong><span>📅 26 de Junio, 2026</span><span>🏟️ Seattle Stadium (Seattle)</span></li>
-                  </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL IRÁN -->
-    <div id="modal-iran" class="modal-overlay" onclick="cerrarModalExterno(event, 'modal-iran')">
-        <div class="modal-contenido">
-            <span class="cerrar-modal" onclick="cerrarModal('modal-iran')">&times;</span>
-            <div class="modal-header">
-                <h2>SELECCIÓN DE IRÁN</h2>
-            </div>
-            <div class="modal-body grid-modal-layout">
-                <div class="columna-narrativa">
-                    <h3>📖 Historia mundialista</h3>
-                    <p>El 'Team Melli' es catalogado históricamente como uno de los equipos más fuertes y disciplinados tácticamente de la confederación asiática. Dominaron la tercera ronda clasificatoria de la AFC. En esta edición buscan avanzar por primera vez a la fase de eliminación directa.</p>
-                    
-                    <h3>💡 Curiosidades</h3>
-                    <ul class="lista-curiosidades">
-                        <li>Es una de las selecciones de la AFC con mayor promedio de estatura física en su bloque defensivo.</li>
-                        <li>Su indumentaria oficial ha llevado en relieve la silueta del guepardo asiático para concientizar sobre la conservación de esta especie en peligro crítico.</li>
-                    </ul>
-                </div>
-                <div class="columna-tecnica">
-                    <h3>📊 Estadísticas principales</h3>
-                    <table class="tabla-estadisticas">
-                        <tr><td>Participaciones mundiales anteriores</td><td>6 (1978, 1998, 2006, 2014, 2018, 2022)</td></tr>
-                        <tr><td>Mejor resultado</td><td>Fase de Grupos</td></tr>
-                        <tr><td>Ranking FIFA (junio 2026)</td><td>21°</td></tr>
-                    </table>
-
-                    <h3>⚽ Partidos (Sedes 2026)</h3>
-                    <ul class="lista-partidos">
-                        <li><strong>Bélgica vs Egipto</strong><span>📅 15 de Junio, 2026</span><span>🏟️ Seattle Stadium (Seattle)</span></li>
-                        <li><strong>Nueva Zelanda vs Egipto</strong><span>📅 21 de Junio, 2026</span><span>🏟️ BC Place (Vancouver)</span></li>
-                        <li><strong>Egipto vs Irán</strong><span>📅 26 de Junio, 2026</span><span>🏟️ Seattle Stadium (Seattle)</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL NUEVA ZELANDA -->
-    <div id="modal-nuevazelanda" class="modal-overlay" onclick="cerrarModalExterno(event, 'modal-nuevazelanda')">
-        <div class="modal-contenido">
-            <span class="cerrar-modal" onclick="cerrarModal('modal-nuevazelanda')">&times;</span>
-            <div class="modal-header">
-                <h2>SELECCIÓN DE NUEVA ZELANDA</h2>
-            </div>
-            <div class="modal-body grid-modal-layout">
-                <div class="columna-narrativa">
-                    <h3>📖 Historia mundialista</h3>
-                    <p>Los 'All Whites' regresan a la máxima cita del fútbol tras dominar cómodamente la fase final eliminatoria de la OFC. Su hito más recordado se remonta a Sudáfrica 2010, certamen del cual se despidieron con orgullo de forma invicta tras cosechar tres empates al hilo en su grupo.</p>
-                    
-                    <h3>💡 Curiosidades</h3>
-                    <ul class="lista-curiosidades">
-                        <li>El apodo 'All Whites' nació originalmente en las eliminatorias del año 1982 al adoptar un uniforme completamente blanco, diferenciándose de sus compatriotas del rugby (All Blacks).</li>
-                        <li>Su delantero histórico Chris Wood es el máximo anotador de la selección y su principal referente en ligas de élite europeas.</li>
-                    </ul>
-                </div>
-                <div class="columna-tecnica">
-                    <h3>📊 Estadísticas principales</h3>
-                    <table class="tabla-estadisticas">
-                        <tr><td>Participaciones mundiales anteriores</td><td>2 (1982, 2010)</td></tr>
-                        <tr><td>Mejor resultado</td><td>Fase de grupos</td></tr>
-                        <tr><td>Ranking FIFA (junio 2026)</td> <td>85°</td></tr>
-                    </table>
-
-                    <h3>⚽ Partidos (Sedes 2026)</h3>
-                    <ul class="lista-partidos">
-                        <li><strong>Irán vs Nueva Zelanda</strong><span>📅 15 de Junio, 2026</span><span>🏟️ Los Angeles Stadium (Los Ángeles)</span></li>
-                        <li><strong>Nueva Zelanda vs Egipto</strong><span>📅 21 de Junio, 2026</span><span>🏟️ BC Place (Vancouver)</span></li>
-                        <li><strong>Nueva Zelanda vs Bélgica</strong><span>📅 26 de Junio, 2026</span><span>🏟️ BC Place (Vancouver)</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="grupoG.js"></script>
 </body>
 </html>

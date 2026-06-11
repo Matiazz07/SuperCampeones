@@ -222,14 +222,18 @@ body {
     padding: 30px;
 }
 
-/* 3. Desactiva la cuadrícula de dos columnas ÚNICAMENTE dentro de los modales */
-[id^="modal-"] .grid-modal-layout {
-    display: block !important; 
+/* 3. Cuadrícula de dos columnas para el contenido interno (Activado) */
+.grid-modal-layout {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr); /* Crea las dos columnas internas */
+    gap: 30px;                             /* Espacio de separación entre columnas */
+    align-items: start;
 }
 
-[id^="modal-"] .columna-narrativa, 
-[id^="modal-"] .columna-tecnica {
-    display: contents !important; 
+/* Permitir que las columnas se comporten como bloques independientes */
+.columna-narrativa, 
+.columna-tecnica {
+    display: block !important; 
 }
 
 /* 4. Espaciado e interlineado idéntico y fluido de arriba para abajo */
@@ -316,3 +320,53 @@ body {
     font-size: 0.9rem;
     color: var(--color-texto-mutado);
 }
+
+/* Corrección de espacio para los títulos internos de los países */
+.columna-narrativa h3 {
+    margin-top: 25px;    /* Separa el título (como Curiosidades) del párrafo de arriba */
+    margin-bottom: 12px; /* Separa el título de su propio contenido abajo */
+    color: var(--color-mundial-vino); /* Les da el color vino oficial */
+    border-bottom: 2px solid var(--color-fondo-pagina); /* Añade la línea decorativa inferior */
+    padding-bottom: 6px;
+}
+
+/* Evita que el primer título se despegue del borde superior */
+.columna-narrativa h3:first-of-type {
+    margin-top: 0;
+}
+
+/* Contenedor de la barra de navegación de países */
+.navegacion-paises {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* Estilo base para los botones de navegación */
+.btn-nav, .btn-volver {
+    background-color: var(--color-blanco);
+    color: var(--color-mundial-vino);
+    border: 2px solid var(--color-mundial-dorado);
+    padding: 8px 16px;
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* El botón central resalta en color dorado */
+.btn-volver {
+    background-color: var(--color-mundial-dorado);
+    color: var(--color-texto-oscuro);
+}
+
+/* Efectos visuales al pasar el mouse por encima */
+.btn-nav:hover, .btn-volver:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
