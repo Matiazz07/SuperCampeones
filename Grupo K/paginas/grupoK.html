@@ -15,6 +15,15 @@
 
 <body>
 
+    <nav class="navbar">
+        <a href="../../index.html" class="navbar-brand">FIFA 2026</a>
+        <ul class="navbar-nav">
+            <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+            <li><a href="grupoK.html" class="navbar-link active">Grupo K</a></li>
+            <li><a href="integrantes.html" class="navbar-link">Integrantes</a></li>
+        </ul>
+    </nav>
+
     <header class="header-grupo">
         <h1>GRUPO K</h1>
         <p class="subtitulo">Álbum de Cromos - Mundial FIFA 2026</p>
@@ -23,7 +32,7 @@
     <main class="contenedor-principal">
         <section class="seccion-cromos">
 
-            <article class="cromo-pais" onclick="abrirModal('portugal')">
+            <article class="cromo-pais" onclick="window.location.href='portugal.html'">
                 <div class="cromo-imagen">
                     <img src="../img/portugal.jpg" alt="Bandera de Portugal" class="bandera">
                     <span class="badge-confederacion">UEFA</span>
@@ -37,7 +46,7 @@
                 </div>
             </article>
 
-            <article class="cromo-pais" onclick="abrirModal('congo')">
+            <article class="cromo-pais" onclick="window.location.href='congo.html'">
                 <div class="cromo-imagen">
                     <img src="../img/congo.jpg" alt="Bandera de RD Congo" class="bandera">
                     <span class="badge-confederacion">CAF</span>
@@ -51,7 +60,7 @@
                 </div>
             </article>
 
-            <article class="cromo-pais" onclick="abrirModal('uzbekistan')">
+            <article class="cromo-pais" onclick="window.location.href='uzbekistan.html'">
                 <div class="cromo-imagen">
                     <img src="../img/uzbekistan.jpg" alt="Bandera de Uzbekistán" class="bandera">
                     <span class="badge-confederacion">AFC</span>
@@ -65,7 +74,7 @@
                 </div>
             </article>
 
-            <article class="cromo-pais" onclick="abrirModal('colombia')">
+            <article class="cromo-pais" onclick="window.location.href='colombia.html'">
                 <div class="cromo-imagen">
                     <img src="../img/colombia.jpg" alt="Bandera de Colombia" class="bandera">
                     <span class="badge-confederacion">CONMEBOL</span>
@@ -82,32 +91,6 @@
         </section>
     </main>
 
-    <div id="modal-equipo" class="modal-overlay">
-        <div class="modal-contenido">
-            <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
-            <div class="modal-header">
-                <h2 id="modal-titulo"></h2>
-            </div>
-            <div class="modal-body grid-modal-layout">
-                <div class="columna-narrativa">
-                    <h3>📖 Historia mundialista</h3>
-                    <p id="modal-historia"></p>
-
-                    <h3>💡 Curiosidades</h3>
-                    <ul id="modal-curiosidades" class="lista-curiosidades"></ul>
-                </div>
-                <div class="columna-tecnica">
-                    <h3>📊 Estadísticas principales</h3>
-                    <div id="modal-estadisticas" class="stats-grid"></div>
-
-                    <h3>⚽ Partidos (Sedes 2026)</h3>
-                    <ul id="modal-partidos" class="lista-partidos"></ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="grupoK.js"></script>
 </body>
 
 </html>
