@@ -34,16 +34,16 @@ header p {
 }
 
 .contenedor {
-    width: 90%;
-    max-width: 1200px;
+    width: 95%;              
+    max-width: 1440px;       
     margin: auto;
     padding-bottom: 50px;
 }
 
 .grupos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 50px;                             
 }
 
 .tarjeta {
@@ -64,15 +64,15 @@ header p {
 }
 
 .tarjeta h2 {
-    font-size: 2rem;
-    color: #8a1538;
+    font-size: 2.2rem;   
     margin-bottom: 15px;
 }
 
-.equipos {
+.tarjeta .equipos {
     margin: 20px 0;
     color: #475569;
-    line-height: 1.8;
+    line-height: 2;       
+    font-size: 1.15rem;   
 }
 
 .boton {
@@ -88,8 +88,8 @@ header p {
 footer {
     text-align: center;
     color: white;
-    padding: 25px;
-    font-size: .9rem;
+    padding: 35px 25px;
+    font-size: 1.1rem;     
 }
 
 @media(max-width:768px) {
