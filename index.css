@@ -34,45 +34,70 @@ header p {
 }
 
 .contenedor {
-    width: 90%;
-    max-width: 1200px;
+    width: 95%;              
+    max-width: 1440px;       
     margin: auto;
     padding-bottom: 50px;
 }
 
 .grupos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;            /* Volvemos a un gap óptimo para evitar que colapsen en pantallas medianas */
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.tarjeta {
-    background: white;
+/* Si la pantalla es muy pequeña para los 4 en línea, se adaptará elegantemente */
+@media (max-width: 1024px) {
+    .grupos {
+        grid-template-columns: repeat(2, 1fr); /* 2x2 en pantallas medianas */
+        gap: 30px;
+    }
+}
+
+.tarjeta{
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.50),
+            rgba(255,255,255,0.50)
+        ),
+        url("balon.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     border-radius: 20px;
-    padding: 35px;
+    padding: 30px;
     text-decoration: none;
-    color: #0f172a;
-    text-align: center;
-    transition: 0.3s;
-    border: 3px solid transparent;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, .15);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
-.tarjeta:hover {
-    transform: translateY(-10px);
-    border-color: #ffb703;
+.tarjeta:hover{
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,0.15);
+
+    background-size: 110%;
 }
 
 .tarjeta h2 {
-    font-size: 2rem;
-    color: #8a1538;
+    font-size: 2.2rem;   
     margin-bottom: 15px;
 }
 
-.equipos {
+.tarjeta .equipos {
     margin: 20px 0;
     color: #475569;
-    line-height: 1.8;
+    line-height: 2;       
+    font-size: 1.15rem;   
 }
 
 .boton {
@@ -88,8 +113,8 @@ header p {
 footer {
     text-align: center;
     color: white;
-    padding: 25px;
-    font-size: .9rem;
+    padding: 35px 25px;
+    font-size: 1.1rem;     
 }
 
 @media(max-width:768px) {
@@ -159,4 +184,165 @@ footer {
     height: 3px;
     background-color: #8a1538;
     border-radius: 2px;
+}
+
+/* ==========================================================================
+   ESTILOS ADAPTADOS PARA LA PÁGINA DE INTEGRANTES (RAÍZ)
+   ========================================================================== */
+
+.header-grupo {
+    background: linear-gradient(135deg, #1d4ed8 0%, #8a1538 50%, #ef4444 100%);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    border-bottom: 5px solid #ffb703;
+}
+
+.header-grupo h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.header-grupo .subtitulo {
+    font-size: 1.1rem;
+    color: #ffb703;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contenedor-principal {
+    width: 95%;
+    max-width: 1440px; /* Misma amplitud que el inicio para que se vea gigante */
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.seccion-cromos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Fuerza a los 4 integrantes en una sola fila horizontal */
+    gap: 50px;                             /* Separación idéntica y elegante a la del index */
+    width: 100%;
+}
+
+.cromo-pais {
+    background-color: white;
+    border: 2px solid #ffb703;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cromo-pais:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(138, 21, 56, 0.2);
+}
+/* foto INTEGRANTE */
+.foto-integrante{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    background-color: #fff;
+}
+
+.cromo-contenido {
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.cromo-contenido h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    color: #8a1538;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #f0f4f8;
+    padding-bottom: 8px;
+}
+
+.info-estatica {
+    text-align: left;
+    font-size: 1.05rem; /* Tamaño de letra cómodo e intermedio */
+}
+
+.info-estatica p {
+    margin-bottom: 12px;
+    color: #0f172a;
+}
+
+.info-estatica strong {
+    color: #475569;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   ESTILOS INTERACTIVOS PARA EL MENÚ DESPLEGABLE (DROPDOWN)
+   ========================================================================== */
+
+.dropdown {
+    position: relative;
+}
+
+/* Flecha estética al lado de 'Grupos' */
+.dropdown-toggle::after {
+    content: ' ▾';
+    font-size: 0.75rem;
+    vertical-align: middle;
+    color: #94a3b8;
+    transition: color 0.2s;
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    color: #8a1538;
+}
+
+/* Caja flotante de los grupos */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(15px);
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+    border-radius: 12px;
+    list-style: none;
+    padding: 8px 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.3s;
+    border: 1px solid #e2e8f0;
+    z-index: 200;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #475569;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f8fafc;
+    color: #8a1538;
+}
+
+/* Muestra el menú al pasar el mouse */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(5px);
 }
