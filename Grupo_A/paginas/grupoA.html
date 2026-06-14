@@ -7,8 +7,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="grupoA.css"> </head>
-<body>
+    <link rel="stylesheet" href="grupoA.css"> 
+    <link rel="stylesheet" href="../../index.css">
+</head>
+<body>    
+    
+    <nav class="navbar">
+        <a href="../../index.html" class="navbar-brand">FIFA 2026</a>
+        <ul class="navbar-nav">
+            <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+            
+            <li class="dropdown">
+                <a href="#" class="navbar-link dropdown-toggle active">Grupos</a>
+                <ul class="dropdown-menu">
+                    <li><a href="../../Grupo_A/paginas/grupoA.html">Grupo A</a></li>
+                    <li><a href="../../Grupo_F/paginas/grupoF.html">Grupo F</a></li>
+                    <li><a href="../../grupoG/paginas/grupoG.html">Grupo G</a></li>
+                    <li><a href="../../Grupo K/paginas/grupoK.html">Grupo K</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="../../integrantes.html" class="navbar-link">Integrantes</a></li>
+        </ul>
+    </nav>
+
 
     <header class="header-grupo">
         <h1>GRUPO A</h1>
@@ -18,7 +40,7 @@
     <main class="contenedor-principal">
         <section class="seccion-cromos">
             
-            <article class="cromo-pais" onclick="abrirModal('mexico')">
+            <article class="cromo-pais" onclick="window.location.href='mexico.html'">
                 <div class="cromo-imagen">
                     <img src="../img/mexico.jpg" alt="Bandera de México" class="bandera">
                     <span class="badge-confederacion">CONCACAF</span>
@@ -32,7 +54,7 @@
                 </div>
             </article>
 
-            <article class="cromo-pais" onclick="abrirModal('sudáfrica')">
+            <article class="cromo-pais" onclick="window.location.href='sudafrica.html'">
                 <div class="cromo-imagen">
                     <img src="../img/sudafrica.jpg" alt="Bandera de Sudáfrica" class="bandera">
                     <span class="badge-confederacion">CAF</span>
@@ -46,7 +68,7 @@
                 </div>
             </article>
 
-            <article class="cromo-pais" onclick="abrirModal('corea_del_sur')">
+            <article class="cromo-pais" onclick="window.location.href='coreaDelSur.html'">
                 <div class="cromo-imagen">
                     <img src="../img/corea_del_sur.jpg" alt="Bandera de corea del sur" class="bandera">
                     <span class="badge-confederacion">AFC</span>
@@ -60,7 +82,7 @@
                 </div>
             </article>
 
-            <article class="cromo-pais" onclick="abrirModal('r_Checa')">
+            <article class="cromo-pais" onclick="window.location.href='chequia.html'">
                 <div class="cromo-imagen">
                     <img src="../img/r_Checa.jpg" alt="Bandera de r_Checa" class="bandera">
                     <span class="badge-confederacion">UEFA</span>
