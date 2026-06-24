@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperCampeones - Álbum de Jugadores</title>
+    
+    <!-- Fuentes oficiales del proyecto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Hojas de Estilo -->
+    <link rel="stylesheet" href="index.css"> <!-- Estilos globales y Navbar -->
+    <link rel="stylesheet" href="jugadores.css"> <!-- Estilos específicos del álbum dinámico (Estudiante D) -->
+</head>
+<body>
+
+    <!-- 1. BARRA DE NAVEGACIÓN GLOBAL (Sincronizada con index.html) -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">FIFA 2026</a>
+        <ul class="navbar-nav">
+            <li><a href="index.html" class="navbar-link">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#" class="navbar-link dropdown-toggle">Grupos</a>
+                <ul class="dropdown-menu">
+                    <li><a href="Grupo_A/paginas/grupoA.html">Grupo A</a></li>
+                    <li><a href="Grupo_F/paginas/grupoF.html">Grupo F</a></li>
+                    <li><a href="grupoG/paginas/grupoG.html">Grupo G</a></li>
+                    <li><a href="Grupo K/paginas/grupoK.html">Grupo K</a></li>
+                </ul>
+            </li>
+            <li><a href="integrantes.html" class="navbar-link">Integrantes</a></li>
+            <li><a href="jugadores.html" class="navbar-link active">Álbum Dinámico</a></li>
+        </ul>
+    </nav>
+
+    <!-- 2. CABECERA DE LA SECCIÓN (Estructura base para Estudiante F) -->
+    <header class="header-grupo">
+        <h1>🌟 ÁLBUM DINÁMICO 2026</h1>
+        <p class="subtitulo">Colección de Cromos Interactivos</p>
+        
+        <!-- Zona reservada para el Estudiante F (Contador de Gamificación) -->
+        <!-- Aquí el Estudiante F inyectará el porcentaje de cromos desbloqueados -->
+        <div id="zona-progreso-f"></div>
+    </header>
+
+    <!-- 3. CONTENEDOR PRINCIPAL DEL JUEGO -->
+    <main class="contenedor-principal">
+        
+        <!-- Zona reservada para el Estudiante E (Barra de Filtros y Búsqueda) -->
+        <!-- Aquí el Estudiante E colocará el <input> y <select> de países -->
+        <section id="zona-filtros-e" style="margin-bottom: 30px;">
+            <!-- Espacio base limpio para filtros -->
+        </section>
+
+        <!-- CONTENEDOR DE TARJETAS EXIGIDO (Estudiante A) -->
+        <!-- Organizado en Grid para recibir los artículos generados por JS -->
+        <section id="contenedor-jugadores" class="seccion-cromos">
+            <!-- Las tarjetas (.card-cromo) se inyectarán dinámicamente aquí desde jugadores.js -->
+        </section>
+        
+    </main>
+
+    <!-- 4. ENLACE CRUCIAL AL SCRIPT DINÁMICO -->
+    <script src="jugadores.js"></script>
+</body>
+</html>
