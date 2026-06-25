@@ -25,6 +25,7 @@ function crearJugador(id, nombre, pais, posicion, urlImagen, urlBandera, colorFo
 }
 
 
+// Alimentación de cromosMundial (IDs 1 al 6)
 
 cromosMundial.push(
     crearJugador(1, "Patrik Schick", "Chequia", "Delantero", "img/jugadores/1_Patrik_Schick.jpg", "img/banderas/chequia.jpg", "#d71920", 25, 52, "Anotó el gol más lejano en la historia de la Eurocopa (45.5 metros)."),
@@ -35,6 +36,24 @@ cromosMundial.push(
     crearJugador(6, "Wahbi Khazri", "Túnez", "Mediapunta", "img/jugadores/6_Wahbi_Khazri.jpg", "img/banderas/tunez.jpg", "#e70013", 25, 74, "Es el único jugador tunecino en anotar goles en dos Copas del Mundo distintas.")
 );
 
+// Alimentación de cromosMundial (IDs 7 al 12)
+
+cromosMundial.push(
+    crearJugador(7, "Kevin De Bruyne", "Bélgica", "Mediocentro", "img/jugadores/7_Kevin_De_Bruyne.jpg", "img/banderas/belgica.jpg", "#E30613", 36, 115, "Es considerado uno de los mejores pasadores de la historia de la Premier League."),
+    crearJugador(8, "Mohamed Salah", "Egipto", "Extremo", "img/jugadores/8_Mohamed_Salah.jpg", "img/banderas/egipto.jpg", "#CE1126", 63, 107, "Es el máximo goleador africano en la historia de la Premier League."),
+    crearJugador(9, "Mehdi Taremi", "Irán", "Delantero", "img/jugadores/9_Mehdi_Taremi.jpg", "img/banderas/iran.jpg", "#239F40", 57, 102, "Fue nominado al Premio Puskas por su espectacular chilena ante el Chelsea en Champions."),
+    crearJugador(10, "Chris Wood", "Nueva Zelanda", "Delantero", "img/jugadores/10_Chris_Wood.jpg", "img/banderas/nuevaZelanda.jpg", "#000000", 44, 84, "Es el máximo goleador histórico de la selección de Nueva Zelanda."),
+    crearJugador(11, "Luis Diaz", "Colombia", "Extremo", "img/jugadores/11_Luis_Diaz.jpg", "img/banderas/colombia.jpg", "#FCD116", 21, 70, "Su carrera despegó tras un impresionante desempeño en la Copa América 2021."),
+    crearJugador(12, "Cristiano Ronaldo", "Portugal", "Delantero", "img/jugadores/12_Cristiano_Ronaldo.jpg", "img/banderas/portugal.jpg", "#FF0000", 145, 230, "Es el máximo goleador histórico en partidos oficiales de selecciones nacionales.")
+);
+
+
+// Función interna para calcular total de goles (Exigida por taller 3, que sea de los jugadores que el estudiante C ha registrado: del 7 al 12))
+function calcularTotalGolesGruposGK() {
+    return cromosMundial
+        .filter(j => j.id >= 7 && j.id <= 12)
+        .reduce((sum, j) => sum + j.estadisticas.goles, 0);
+}
 
 // 3. Función de renderizado inicial usando .forEach()
 function renderizarAlbum() {
@@ -87,7 +106,17 @@ function renderizarAlbum() {
     });
 }
 
-// Ejecutar el renderizado cuando el DOM esté completamente cargado
+/// Ejecutar el renderizado y la actualización de estadísticas cuando el DOM esté cargado
 document.addEventListener("DOMContentLoaded", () => {
+    // 1. Renderizamos todos los cromos en el DOM
     renderizarAlbum();
+
+    // 2. Calculamos el total de goles de tus jugadores (IDs 7 al 12)
+    const totalGoles = calcularTotalGolesGruposGK();
+
+    // 3. Inyectamos ese valor en el HTML
+    const displayTotal = document.getElementById("valor-total-goles");
+    if (displayTotal) {
+        displayTotal.innerText = totalGoles;
+    }
 });
