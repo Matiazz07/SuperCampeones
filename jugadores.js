@@ -43,7 +43,7 @@ cromosMundial.push(
     crearJugador(8, "Mohamed Salah", "Egipto", "Extremo", "img/jugadores/8_Mohamed_Salah.jpg", "img/banderas/egipto.jpg", "#CE1126", 63, 107, "Es el máximo goleador africano en la historia de la Premier League."),
     crearJugador(9, "Mehdi Taremi", "Irán", "Delantero", "img/jugadores/9_Mehdi_Taremi.jpg", "img/banderas/iran.jpg", "#239F40", 57, 102, "Fue nominado al Premio Puskas por su espectacular chilena ante el Chelsea en Champions."),
     crearJugador(10, "Chris Wood", "Nueva Zelanda", "Delantero", "img/jugadores/10_Chris_Wood.jpg", "img/banderas/nuevaZelanda.jpg", "#4119c6", 44, 84, "Es el máximo goleador histórico de la selección de Nueva Zelanda."),
-    crearJugador(11, "Luis Diaz", "Colombia", "Extremo", "img/jugadores/11_Luis_Diaz.jpg", "img/banderas/colombia.jpg", "#FCD116", 21, 70, "Su carrera despegó tras un impresionante desempeño en la Copa América 2021."),
+    crearJugador(11, "Luis Díaz", "Colombia", "Extremo", "img/jugadores/11_Luis_Diaz.jpg", "img/banderas/colombia.jpg", "#FCD116", 21, 70, "Su carrera despegó tras un impresionante desempeño en la Copa América 2021."),
     crearJugador(12, "Cristiano Ronaldo", "Portugal", "Delantero", "img/jugadores/12_Cristiano_Ronaldo.jpg", "img/banderas/portugal.jpg", "#FF0000", 145, 230, "Es el máximo goleador histórico en partidos oficiales de selecciones nacionales.")
 );
 
