@@ -35,8 +35,8 @@
                     <li><a href="Grupo K/paginas/grupoK.html">Grupo K</a></li>
                 </ul>
             </li>
-            <li><a href="../../integrantes.html" class="navbar-link">Integrantes</a></li>
-            <li><a href="../../jugadores.html" class="navbar-link">Álbum Dinámico</a></li>
+            <li><a href="integrantes.html" class="navbar-link">Integrantes</a></li>
+            <li><a href="jugadores.html" class="navbar-link">Álbum Dinámico</a></li>
         </ul>
     </nav>
 
@@ -55,9 +55,20 @@
 
         <!-- Zona reservada para el Estudiante E (Barra de Filtros y Búsqueda) -->
         <!-- Aquí el Estudiante E colocará el <input> y <select> de países -->
-        <section id="zona-filtros-e" style="margin-bottom: 30px;">
-            <!-- Espacio base limpio para filtros -->
-        </section>
+        <section id="zona-filtros-e" class="barra-filtros">
+
+    <input
+        type="text"
+        id="buscadorJugador"
+        placeholder="Buscar jugador..."
+        class="navbar-link"
+    >
+
+    <select id="filtroPais" class="navbar-link">
+        <option value="">Todos los países</option>
+    </select>
+
+</section>
 
         <!-- CONTENEDOR DE TARJETAS EXIGIDO (Estudiante A) -->
         <!-- Organizado en Grid para recibir los artículos generados por JS -->

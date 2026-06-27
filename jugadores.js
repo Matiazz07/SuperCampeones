@@ -20,11 +20,9 @@ function crearJugador(id, nombre, pais, posicion, urlImagen, urlBandera, colorFo
             partidos: partidos
         },
         curiosidad: curiosidad,
-        destacado: destacado      
+        destacado: destacado
     };
 }
-
-
 
 cromosMundial.push(
     crearJugador(1, "Patrik Schick", "Chequia", "Delantero", "img/jugadores/1_Patrik_Schick.jpg", "img/banderas/chequia.jpg", "#d71920", 25, 52, "Anotó el gol más lejano en la historia de la Eurocopa (45.5 metros)."),
@@ -35,38 +33,40 @@ cromosMundial.push(
     crearJugador(6, "Wahbi Khazri", "Túnez", "Mediapunta", "img/jugadores/6_Wahbi_Khazri.jpg", "img/banderas/tunez.jpg", "#e70013", 25, 74, "Es el único jugador tunecino en anotar goles en dos Copas del Mundo distintas.")
 );
 
+// ==========================================================================
+// ESTUDIANTE A - RENDERIZADO DEL ÁLBUM
+// ==========================================================================
 
-// 3. Función de renderizado inicial usando .forEach()
-function renderizarAlbum() {
+function renderizarAlbum(lista = cromosMundial) {
+
     const contenedor = document.getElementById("contenedor-jugadores");
+
     if (!contenedor) return;
-    
-    // Limpiamos el contenedor antes de renderizar
+
     contenedor.innerHTML = "";
 
-    cromosMundial.forEach(jugador => {
-        // Creamos el elemento artículo para la tarjeta (.card-cromo)
+    lista.forEach(jugador => {
+
         const article = document.createElement("article");
+
         article.className = "card-cromo";
-        
-        // El estudiante D aplicará el color de fondo dinámico inline aquí
+
         article.style.backgroundColor = jugador.colorFondoHex || "#ffffff";
 
-        // Estructura interna de la tarjeta
         article.innerHTML = `
             <div class="cromo-header">
                 <img src="${jugador.urlBandera}" alt="Bandera de ${jugador.pais}" class="cromo-bandera-top">
                 <span class="cromo-posicion">${jugador.posicion}</span>
             </div>
-            
+
             <div class="cromo-avatar-container">
                 <img src="${jugador.urlImagen}" alt="Foto de ${jugador.nombre}" class="cromo-foto-jugador">
             </div>
-            
+
             <div class="cromo-info">
                 <h3>${jugador.nombre.toUpperCase()}</h3>
                 <p class="cromo-pais-nombre">${jugador.pais}</p>
-                
+
                 <table class="cromo-tabla-stats">
                     <tr>
                         <td>Partidos</td>
@@ -77,17 +77,92 @@ function renderizarAlbum() {
                         <td><strong>${jugador.estadisticas.goles}</strong></td>
                     </tr>
                 </table>
-                    <p class="cromo-curiosidad" style="font-size: 0.85em; font-style: italic; margin-top: 10px; color: #555;">
+
+                <p class="cromo-curiosidad" style="font-size:0.85em; font-style:italic; margin-top:10px; color:#555;">
                     "${jugador.curiosidad}"
-                    </p>
+                </p>
             </div>
         `;
 
         contenedor.appendChild(article);
+
     });
+
 }
 
-// Ejecutar el renderizado cuando el DOM esté completamente cargado
+// ==========================================================================
+// ESTUDIANTE E - FILTROS Y BÚSQUEDA
+// ==========================================================================
+
+// Cargar automáticamente los países en el select
+function cargarPaises() {
+
+    const select = document.getElementById("filtroPais");
+
+    const paises = [...new Set(cromosMundial.map(jugador => jugador.pais))];
+
+    paises.sort();
+
+    paises.forEach(pais => {
+
+        const option = document.createElement("option");
+
+        option.value = pais;
+
+        option.textContent = pais;
+
+        select.appendChild(option);
+
+    });
+
+}
+
+// Aplicar filtros usando .filter()
+function aplicarFiltros() {
+
+    const texto = document
+        .getElementById("buscadorJugador")
+        .value
+        .toLowerCase();
+
+    const paisSeleccionado = document
+        .getElementById("filtroPais")
+        .value;
+
+    const jugadoresFiltrados = cromosMundial.filter(jugador => {
+
+        const coincideNombre = jugador.nombre
+            .toLowerCase()
+            .includes(texto);
+
+        const coincidePais =
+            paisSeleccionado === "" ||
+            jugador.pais === paisSeleccionado;
+
+        return coincideNombre && coincidePais;
+
+    });
+
+    renderizarAlbum(jugadoresFiltrados);
+
+}
+
+// ==========================================================================
+// INICIALIZACIÓN
+// ==========================================================================
+
 document.addEventListener("DOMContentLoaded", () => {
+
     renderizarAlbum();
+
+    cargarPaises();
+
+    document
+        .getElementById("buscadorJugador")
+        .addEventListener("input", aplicarFiltros);
+
+    document
+        .getElementById("filtroPais")
+        .addEventListener("change", aplicarFiltros);
+
 });
